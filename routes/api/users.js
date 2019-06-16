@@ -11,6 +11,7 @@ router.get("/test", (req, res) => {
   res.json({ msg: "This is the user route" });
 });
 
+// Register new user
 router.post('/register', (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
 
@@ -44,6 +45,7 @@ router.post('/register', (req, res) => {
     })
 })
 
+// Login to existing user account
 router.post('/login', (req, res) => {
   const { errors, isValid } = validateLogin(req.body);
 
@@ -87,6 +89,5 @@ router.post('/login', (req, res) => {
         })
     })
 })
-
 
 module.exports = router;

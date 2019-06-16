@@ -6,6 +6,12 @@ module.exports = function validateQuestionInput(data) {
   
   data.body = validText(data.body) ? data.body : ''
 
+  if (Validator.isEmpty(data.body)) {
+    errors.body = "Must include question body";
+  }
+
+  
+
   return {
     errors,
     isValid: Object.keys(errors).length === 0

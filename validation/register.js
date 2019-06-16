@@ -6,6 +6,8 @@ module.exports = function validateRegisterInput(data) {
 
   data.handle = validText(data.handle) ? data.handle : ''
   data.email = validText(data.email) ? data.email : ''
+  data.gender = validText(data.gender) ? data.gender : ''
+  data.age = validText(data.age) ? data.age : ''
   data.password = validText(data.password) ? data.password : ''
 
   if (Validator.isEmpty(data.handle)) {
@@ -22,6 +24,14 @@ module.exports = function validateRegisterInput(data) {
 
   if (Validator.isEmpty(data.email)) {
     errors.email = "Email is required";
+  }
+
+  if (Validator.isEmpty(data.gender)) {
+    errors.gender = "Gender is required";
+  }
+
+  if (Validator.isEmpty(data.age)) {
+    errors.age = "Age is required";
   }
 
   if (Validator.isEmpty(data.password)) {
