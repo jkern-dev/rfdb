@@ -17,19 +17,23 @@ class NavBar extends React.Component {
   getLinks() {
     if (this.props.loggedIn) {
       return (
-        <div>
-          <h1>Hello {this.props.currentUser.handle}</h1>
-          <Link to={'/questions'}>All Questions</Link>
-          <Link to={'/profile'}>Profile</Link>
-          <Link to={'/new_question'}>Write a Question</Link>
-          <button onClick={this.logoutUser}>Logout</button>
+        <div className = "navbar">
+          <div className = "navbar-links">
+            <Link to={'/profile'} className="navbar-link"><h1>Hello {this.props.currentUser.handle}</h1></Link>
+            <Link to={'/questions'} className="navbar-link">All Questions</Link>
+            <Link to={'/profile'} className="navbar-link">Profile</Link>
+            <Link to={'/new_question'} className="navbar-link">Write a Question</Link>
+            <button onClick={this.logoutUser} className = "logout-link">Logout</button>
+          </div>
         </div>
       );
     } else {
       return (
-        <div>
-          <Link to={'/signup'}>Signup</Link>
-          <Link to={'/login'}>Login</Link>
+        <div className="navbar">
+          <div className="navbar-links">
+            <Link to={'/signup'} className="navbar-link">Signup</Link>
+            <Link to={'/login'} className="navbar-link">Login</Link>
+          </div>
         </div>
       );
     }
@@ -38,7 +42,10 @@ class NavBar extends React.Component {
   render() {
     return (
       <div>
-        <h1>RFDB A RedFlag Dealbreaker Database!</h1>
+        <div className = "logo-container">
+          <Link to={'/'}><h2 className="logo">RFDB</h2></Link>
+          <p className="sub-logo">A Red Flag Deal Breaker Database!</p>
+        </div>
         {this.getLinks()}
       </div>
     );

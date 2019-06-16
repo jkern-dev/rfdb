@@ -1,5 +1,5 @@
 import React from 'react';
-import QuestionBox from './question_box';
+// import QuestionBox from './question_box';
 
 class QuestionCompose extends React.Component {
   constructor(props) {
