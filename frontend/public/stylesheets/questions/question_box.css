@@ -1,0 +1,25 @@
+.question-box {
+  text-align: center;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.answer-options {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-evenly; */
+}
+
+.answer-choice {
+  border-style: solid;
+  width: 350px;
+}
+
+.answer-choice:hover {
+  background-color: red;
+}
+
+.answer-slider {
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
