@@ -94,6 +94,7 @@ class SignupForm extends React.Component {
             />
             <br />
             <input type="submit" value="Submit" />
+            <p>Have an account? {this.props.otherForm}</p>
             {this.renderErrors()}
           </div>
         </form>
@@ -102,4 +103,4 @@ class SignupForm extends React.Component {
   }
 }
 
-export default withRouter(SignupForm);
+export default SignupForm;

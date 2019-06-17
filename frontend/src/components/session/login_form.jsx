@@ -76,6 +76,7 @@ class LoginForm extends React.Component {
             />
             <br />
             <input type="submit" value="Submit" />
+            <p>Don't have an account? {this.props.otherForm}</p>
             {this.renderErrors()}
           </div>
         </form>
