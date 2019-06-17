@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import Modal from '../modal';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -30,9 +31,16 @@ class NavBar extends React.Component {
     } else {
       return (
         <div className="navbar">
+          <Modal />
           <div className="navbar-links">
-            <Link to={'/signup'} className="navbar-link">Signup</Link>
-            <Link to={'/login'} className="navbar-link">Login</Link>
+            <Link 
+              onClick={() => this.props.openModal('signup')}
+              className="navbar-link"
+            >Signup</Link>
+            <Link
+              onClick = {() => this.props.openModal('login')}
+              className="navbar-link"
+            >Login</Link>
           </div>
         </div>
       );
