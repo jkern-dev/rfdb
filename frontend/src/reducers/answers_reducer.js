@@ -11,6 +11,9 @@ const AnswerReducer = (state = { all: {}, answer: {}, user: {}, new: undefined }
     case RECEIVE_ANSWERS:
       newState.all = action.answers.data;
       return newState;
+    case RECEIVE_ANSWER:
+      newState.answer = action.answer.data;
+      return newState;
     case RECEIVE_NEW_ANSWER:
       newState.new = action.answer.data;
       return newState;

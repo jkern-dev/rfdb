@@ -26,7 +26,13 @@ class Question extends React.Component {
         <div>
           <h2>All Questions</h2>
           {this.state.questions.map(question => (
-            <QuestionBox key={question._id} question={question} answerNum={5} />
+            <QuestionBox key={question._id} 
+              question={question} 
+              answerNum={5}
+              fetchQuestionAnswers={this.props.fetchQuestionAnswers}
+              createAnswer={this.props.createAnswer}
+              fetchUserQuestionAnswer={this.props.fetchUserQuestionAnswer}
+            />
           ))}
         </div>
       );

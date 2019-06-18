@@ -11,3 +11,7 @@ export const getAnswers = () => {
 export const getQuestionAnswers = (id) => {
   return axios.get(`/api/answers/questions/${id}`)
 };
+
+export const getUserQuestionAnswer = (questionId, userId) => {
+  return axios.get(`/api/answers/questions/${questionId}/${userId}`)
+};

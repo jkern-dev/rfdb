@@ -1,11 +1,13 @@
 import {
   writeAnswer,
-  getQuestionAnswers
+  getQuestionAnswers,
+  getUserQuestionAnswer
 } from '../util/answer_api_util';
 
 export const RECEIVE_ANSWER = "RECEIVE_ANSWER";
 export const RECEIVE_ANSWERS = "RECEIVE_ANSWERS";
 export const RECEIVE_NEW_ANSWER = "RECEIVE_NEW_ANSWER";
+
 
 export const receiveAnswer = answer => ({
   type: RECEIVE_ANSWER,
@@ -31,5 +33,11 @@ export const createAnswer = data => dispatch => (
 export const fetchQuestionAnswers = (data) => dispatch => (
   getQuestionAnswers(data)
     .then(answers => dispatch(receiveAnswers(answers)))
+    .catch(err => console.log(err))
+);
+
+export const fetchUserQuestionAnswer = (questionId, userId) => dispatch => (
+  getUserQuestionAnswer(questionId, userId)
+    .then(answer => dispatch(receiveAnswer(answer)))
     .catch(err => console.log(err))
 );
