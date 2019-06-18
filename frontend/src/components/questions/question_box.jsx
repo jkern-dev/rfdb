@@ -36,14 +36,14 @@ class QuestionBox extends React.Component {
       answer: this.state.answerNum
     }
     this.props.createAnswer(answer)
-      // .then(() => this.props.history.push('/questions'))
+      .then(() => this.props.history.push(`/questions/results/${this.state.question._id}`));
   }
 
   render() {
     return (
       <div className = "question-box">
         <h3>{this.state.question.body}</h3>
-        <div className = "answer-options">
+        <div className = "answer-option s">
           <p>{'Your Rating: '+ this.state.answerNum}</p> 
           <div className = "slide-container">
             <input 

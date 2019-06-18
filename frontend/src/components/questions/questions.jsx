@@ -32,6 +32,7 @@ class Question extends React.Component {
               fetchQuestionAnswers={this.props.fetchQuestionAnswers}
               createAnswer={this.props.createAnswer}
               fetchUserQuestionAnswer={this.props.fetchUserQuestionAnswer}
+              history={this.props.history}
             />
           ))}
         </div>

@@ -25,6 +25,15 @@ router.get('/questions/:question_id', (req,res) => {
     .catch(err => res.status(404).json({noAnswersFound: "Question has no answers"}))
 });
 
+// User answer for specific question
+router.get('/questions/:question_id/:user_id', (req,res) => {
+  Answer.find({
+    question: req.params.question_id,
+    user: req.params.user_id
+  }).then(answer => res.json(answer))
+  .catch(err => res.status(404).json({noAnswerFound: "Question not yet answered"}))
+});
+
 // create a new answer
 router.post('/',
   passport.authenticate('jwt', { session: false }),
@@ -33,6 +42,7 @@ router.post('/',
       user: {
         _id: req.user.id,
         age: req.user.age,
+        handle: req.user.handle,
         gender: req.user.gender
       },
       question: req.body.question,

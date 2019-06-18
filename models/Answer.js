@@ -7,6 +7,10 @@ const AnswerSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: 'users'
     },
+    handle: {
+      type: String,
+      required: true
+    },
     age: {
       type: Number,
       required: true
@@ -23,6 +27,10 @@ const AnswerSchema = new Schema({
   answer: {
     type: Number,
     required: true
+  },
+  date: {
+    type: Date,
+    default: Date.now
   }
 });
 

@@ -7,7 +7,7 @@ import {
 } from '../../actions/answer_actions';
 import Questions from './questions';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
     questions: Object.values(state.questions.all)
   };

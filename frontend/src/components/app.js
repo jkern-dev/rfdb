@@ -12,6 +12,8 @@ import MainPage from './main/main_page';
 import QuestionsContainer from './questions/questions_container';
 import ProfileContainer from './profile/profile_container';
 import QuestionComposeContainer from './questions/question_compose_container';
+import ResultsContainer from './results/results_container';
+
 
 const App = () => (
   <div>
@@ -24,6 +26,7 @@ const App = () => (
       <ProtectedRoute exact path='/questions' component={QuestionsContainer} />
       <ProtectedRoute exact path='/profile' component={ProfileContainer} />
       <ProtectedRoute exact path='/new_question' component={QuestionComposeContainer} />
+      <ProtectedRoute exact path='/questions/results/:qid' component={ResultsContainer} />
     </Switch>
   </div>
 );
