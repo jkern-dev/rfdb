@@ -1,4 +1,5 @@
 import React from 'react';
+import { Bar } from 'react-chartjs';
 
 class Results extends React.Component {
   constructor(props) {
@@ -25,8 +26,11 @@ class Results extends React.Component {
   }
 
   render() {
+
+    if (this.state.question === undefined) return null;
+    if (this.state.answers.length === 0) return null;
     return (
-      <h1>This Works!</h1>
+      <h1>{this.state.question.body}</h1>
     );
   }
 }
